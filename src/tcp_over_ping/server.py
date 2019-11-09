@@ -7,7 +7,7 @@ def pkt_callback(packet: Packet) -> None:
 
 
 def start_sniffing() -> None:
-    sniff(iface="enp3s0", prn=pkt_callback, filter="icmp[icmptype] == 8", store=0, count=5)
+    sniff(iface="enp3s0", prn=pkt_callback, filter="icmp[icmptype] == icmp-echo", store=0)
 
 
 if __name__ == "__main__":
